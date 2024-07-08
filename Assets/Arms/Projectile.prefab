@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7558974061072014720}
   - component: {fileID: 82073351954192686}
-  - component: {fileID: 184502812988922712}
   - component: {fileID: 6026055392286482644}
   - component: {fileID: 2983607130220943557}
   - component: {fileID: -6508003915829243229}
+  - component: {fileID: 6430914522751753336}
+  - component: {fileID: 184502812988922712}
   - component: {fileID: -2116110282822172377}
   m_Layer: 0
   m_Name: Projectile
@@ -89,20 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &184502812988922712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176643202138932030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10924ef0d55fa4745bbbca5b9ef1d6e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 7.56
-  isToRight: 1
 --- !u!50 &6026055392286482644
 Rigidbody2D:
   serializedVersion: 4
@@ -187,6 +174,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e26ef57544e8c44bf708ad5e809364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6430914522751753336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176643202138932030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444053fa7ae5e1a47ae2497a8bc7de61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 3176643202138932030}
+--- !u!114 &184502812988922712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176643202138932030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10924ef0d55fa4745bbbca5b9ef1d6e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7.56
 --- !u!114 &-2116110282822172377
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,22 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveForward : MonoBehaviour
-{
+public class MoveForward : MonoBehaviour {
     [SerializeField] private float speed;
-    [SerializeField] private Boolean isToRight = false;
+    private Vector2 direction = Vector2.left;
 
-    // Start is called before the first frame update
-    void Start() {
-
+    public void SetSpeed(float newSpeed) {
+        speed = newSpeed;
     }
 
-    // Update is called once per frame
-    void Update() {
+    public void SetDirection(Vector2 newDirection) {
+        direction = newDirection.normalized;
+    }
 
-        float direction = isToRight ? 1 : -1;
-        transform.Translate(Vector3.right * speed * direction * Time.deltaTime);
+    void Update() {
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 }

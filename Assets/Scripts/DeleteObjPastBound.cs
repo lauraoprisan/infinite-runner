@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DeleteObjPastBound : MonoBehaviour
 {
-    public GameObject obj;
+    public GameObject obj;  
     private float leftLimit = -10f;
+    private float rightLimit = 12f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class DeleteObjPastBound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (obj.transform.position.x < leftLimit) {
+        if (transform.position.x < leftLimit || transform.position.x >rightLimit) {
             Destroy(obj);
         }
     }

@@ -1,29 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectCollision : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+public class DetectCollision : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
-        // Get the layer index for the "Enemies" layer
-        int destroyableLayer = LayerMask.NameToLayer("Destroyable");
 
-        // Check if the collision object is on the "Enemies" layer
+        if (gameObject.name.Contains("EnemyProjectile")) {
+            HandleEnemyProjectileCollision(collision);
+        } else {
+            HandlePlayerProjectileCollision(collision);
+        }
+    }
+
+    private void HandleEnemyProjectileCollision(Collider2D collision) {
+        int playerLayer = LayerMask.NameToLayer("Player");
+       
+        
+        if (collision.gameObject.layer == playerLayer) {
+            GameEvents.instance.PlayerDamage();
+            Destroy(gameObject);
+        }
+    }
+
+    private void HandlePlayerProjectileCollision(Collider2D collision) {
+        int destroyableLayer = LayerMask.NameToLayer("Destroyable");
         if (collision.gameObject.layer == destroyableLayer) {
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
     }
-
 }
