@@ -73,7 +73,7 @@ public class Logic : MonoBehaviour {
 
     private void SetHighScore(int score) {
         PlayerPrefs.SetInt(HighScoreKey, score);
-        PlayerPrefs.Save();  // Ensure the value is saved to disk
+        PlayerPrefs.Save();  
     }
 
 }

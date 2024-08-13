@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class TripleShootingEnemy : BaseEnemy {
     public GameObject projectile;
-    public float shootingInterval = 0.5f;  // Time between shots
-    public float projectileSpeed = 7f;  // Speed of the projectile
-    public float diagonalAngle = 30f;  // Angle for diagonal shots
+    public float shootingInterval = 0.5f; 
+    public float projectileSpeed = 7f;  
+    public float diagonalAngle = 30f;
     private float shootTimer;
 
     private void Start() {
-        shootTimer = shootingInterval;  // Start the timer
+        shootTimer = shootingInterval;
     }
 
     private void Update() {
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0) {
             Shoot();
-            shootTimer = shootingInterval;  // Reset the timer
+            shootTimer = shootingInterval;  
         }
     }
 
@@ -23,13 +23,10 @@ public class TripleShootingEnemy : BaseEnemy {
         if (projectile != null) {
             Vector3 shootPosition = transform.position;
 
-            // Straight left
             SpawnProjectile(shootPosition, Vector2.left);
 
-            // Diagonally up-left
             SpawnProjectile(shootPosition, Quaternion.Euler(0, 0, diagonalAngle) * Vector2.left);
 
-            // Diagonally down-left
             SpawnProjectile(shootPosition, Quaternion.Euler(0, 0, -diagonalAngle) * Vector2.left);
         } else {
             Debug.LogWarning("Projectile is not set on " + gameObject.name);

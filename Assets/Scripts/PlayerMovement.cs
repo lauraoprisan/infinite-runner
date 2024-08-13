@@ -10,13 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float xRange = 8.8f;
     private float yRange = 5f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         //Create the movement on x and y axis 

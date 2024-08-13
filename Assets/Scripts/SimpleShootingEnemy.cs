@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class SimpleShootingEnemy : BaseEnemy {
     public GameObject projectile;
-    public float shootingInterval = 0.4f;  // Time between shots
-    public float projectileSpeed = 10f;  // Speed of the projectile
+    public float shootingInterval = 0.4f;  
+    public float projectileSpeed = 10f;  
     private float shootTimer;
 
     private void Start() {
-        shootTimer = shootingInterval;  // Start the timer
+        shootTimer = shootingInterval;  
     }
 
     private void Update() {
@@ -15,7 +15,7 @@ public class SimpleShootingEnemy : BaseEnemy {
 
         if (shootTimer <= 0) {
             Shoot();
-            shootTimer = shootingInterval;  // Reset the timer
+            shootTimer = shootingInterval;  
         }
     }
 

@@ -7,7 +7,7 @@ public class EnemyType {
     public GameObject enemyPrefab;
     public float minSpawnInterval = 0.2f;
     public float maxSpawnInterval = 2f;
-    public float initialDelay = 0f; // New field for initial delay
+    public float initialDelay = 0f; 
 }
 
 public class EnemiesSpawner : MonoBehaviour {
@@ -15,9 +15,9 @@ public class EnemiesSpawner : MonoBehaviour {
     public float yRange = 3.8f;
     private Dictionary<EnemyType, float> spawnTimers = new Dictionary<EnemyType, float>();
     private Dictionary<EnemyType, float> nextSpawnIntervals = new Dictionary<EnemyType, float>();
-    private Dictionary<EnemyType, float> initialDelayTimers = new Dictionary<EnemyType, float>(); // New dictionary for initial delays
+    private Dictionary<EnemyType, float> initialDelayTimers = new Dictionary<EnemyType, float>(); 
     private bool shouldSpawn = true;
-    private float gameTimer = 0f; // Timer to track game time
+    private float gameTimer = 0f; 
 
     void Start() {
         InitializeSpawnTimers();
@@ -38,7 +38,6 @@ public class EnemiesSpawner : MonoBehaviour {
         gameTimer += Time.deltaTime;
 
         foreach (var enemyType in enemyTypes) {
-            // Check if the initial delay has passed
             if (gameTimer >= enemyType.initialDelay) {
                 spawnTimers[enemyType] += Time.deltaTime;
 
