@@ -9,5 +9,3 @@ mies that have different behaviors (non-shooting, shooting with one projectile a
 shooting with 3 projectiles at the same time). Each new enemy appears gradually during the 
 game. Furthermore, the player can make use of a superpower that randomly appears during the 
 game: short span invincibility. A highscore system is implemented.
-
-The inspiration for this game was Cuphead.
